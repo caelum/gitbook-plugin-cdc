@@ -148,7 +148,7 @@ function _headerAndFooter(pdfInfo) {
         var headerFooterOptions = {
           tocItem: null,
           pageNumber: null,
-          next: 'blank-toc',
+          next: '1',
           options: pdfInfo
         };
         return htmlRenderer.render(headerFooterOptions, pdfInfo.options.pdf.headerFooterTemplate);
@@ -157,19 +157,6 @@ function _headerAndFooter(pdfInfo) {
         var headerFooterPath = path.join(pdfInfo.headerFooterDir, './blank-cover.html');
         return Q.nfcall(fs.writeFile, headerFooterPath, html);
       })
-      .then(function () {
-        var headerFooterOptions = {
-          tocItem: null,
-          pageNumber: null,
-          next: '1',
-          options: pdfInfo
-        };
-        return htmlRenderer.render(headerFooterOptions, pdfInfo.options.pdf.headerFooterTemplate);
-      })
-      .then(function (html) {
-        var headerFooterPath = path.join(pdfInfo.headerFooterDir, './blank-toc.html');
-        return Q.nfcall(fs.writeFile, headerFooterPath, html);
-      });
   }).then(function () {
     var pdfOptions = {
       '--pdf-page-numbers': null,
