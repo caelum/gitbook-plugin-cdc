@@ -220,7 +220,7 @@ function addPreContent() {
       //O toc original, gerado pelo gitbook/calibre, tem sempre apenas uma pagina.
       //isso é garantido pq o conteudo do toc original nao é visivel (display:none).
       //descontando 1 pagina para a capa + uma pagina para o toc original
-      pageNumberOffset: 2,
+      pageNumberOffset: 1,
       originalNumberOfPages: 0,
       numberOfPages: 0
     },

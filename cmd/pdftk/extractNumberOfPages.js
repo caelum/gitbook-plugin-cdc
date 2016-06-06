@@ -27,7 +27,6 @@ function _extractNumberOfPages(pdfFile) {
           return line.indexOf('NumberOfPages') === 0;
         })[0].split(':')[1];
       console.log('pdftk - Extracted number of pages! :)');
-
       return d.resolve(parseInt(numberOfPages, 10));
     });
 

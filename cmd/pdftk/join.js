@@ -27,7 +27,7 @@ function _generatePdftkJoinCall(pdfFile, files, outputFile) {
   pdftkCall += filesRanges(files, letterAndFile);
   pdftkCall += ' cat A1';
   pdftkCall += filesRanges(files, onlyLetter);
-  pdftkCall += ' A3-end output ' + outputFile;
+  pdftkCall += ' A2-end output ' + outputFile;
   return pdftkCall;
 }
 
